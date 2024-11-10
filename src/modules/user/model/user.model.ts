@@ -3,34 +3,34 @@ import { Date, Document } from 'mongoose';
 
 @Schema()
 export class User extends Document {
-  @Prop()
+  @Prop({ type: String })
   firstName: string;
 
-  @Prop()
+  @Prop({ type: String })
   lastName: string;
 
-  @Prop({ unique: true })
+  @Prop({ unique: true, type: String })
   email: string;
 
-  @Prop()
+  @Prop({ type: String })
   contact: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, type: String })
   password: string;
 
   @Prop([String])
   socialMediaLinks: string[];
 
-  @Prop()
+  @Prop({ type: String })
   qrCode: string;
 
-  @Prop({ default: Date.now })
+  @Prop({ default: Date.now, type: Date })
   createdAt: Date;
 
-  @Prop()
+  @Prop({ type: Date })
   updatedAt: Date;
 
-  @Prop()
+  @Prop({ type: String })
   userAvatar: string;
 }
 
